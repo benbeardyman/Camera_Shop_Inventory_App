@@ -1,4 +1,4 @@
-class Supplier_Product_List:
+class Supplier_Product:
 
     def __init__(self, supplier, product, cost_price, id = None):
         self.supplier = supplier
