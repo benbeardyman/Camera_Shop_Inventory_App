@@ -2,14 +2,18 @@
 {% block content %}
 <h1>{{supplier.name}}</h1>
 
-{% for supplier in suppliers %}
-
 <div>
-    <div>
-        Products: 
-    </div>
+    <h3> Products:</h3>
+    
+    <ul>
+        {% for product in products %}
+        <li>{{product.manufacturer}} {{ product.name }} 
+            <br>Cost Price: {{ product.cost_price}}</li>
+        {% endfor %}
+
+    </ul>
+    
 
 </div>
-{% endfor %}
 
 {% endblock %}

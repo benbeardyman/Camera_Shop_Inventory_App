@@ -6,7 +6,7 @@ from models.supplier import Supplier
 
 
 def save(product):
-    sql = "INSERT INTO products (name, manufacturer, category, description, retail_price, stock_level) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING *"
+    sql = "INSERT INTO products (name, manufacturer, category, description, retail_price, stock_level) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"
     values = [product.name, product.manufacturer, product.category, product.description, product.retail_price, product.stock_level]
     results = run_sql(sql, values)
     product.id = results[0]['id']
@@ -47,6 +47,9 @@ def products_for_supplier(supplier):
         products.append(product)
 
     return products
+
+
+
 
 
 def delete_all():

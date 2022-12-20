@@ -3,6 +3,7 @@ from models.product import Product
 
 import repositories.product_repository as product_repository
 import repositories.supplier_repository as supplier_repository
+import repositories.supplier_product_repository as supplier_product_repository
 
 
 products_blueprint = Blueprint("products", __name__)
@@ -18,3 +19,20 @@ def show(id):
     product = product_repository.select(id)
     suppliers = supplier_repository.suppliers_for_product(product)
     return render_template("products/show.html", product=product, suppliers=suppliers)
+
+
+@products_blueprint.route("/products/new_product")
+def new_product():
+    return render_template("products/new_product.html")
+
+@products_blueprint.route("/products", methods=['POST'])
+def create_product():
+    name = request.form['name']
+    manufacturer = request.form['manufacturer']
+    category = request.form['category']
+    description = request.form['description']
+    retail_price = request.form['retail_price']
+    stock_level = request.form['stock_level']
+    product = Product(name, manufacturer, category, description, retail_price, stock_level)
+    product_repository.save(product)
+    return redirect('/products')
