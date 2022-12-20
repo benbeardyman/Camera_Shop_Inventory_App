@@ -22,6 +22,30 @@ def select_all():
         suppliers.append(supplier)
     return suppliers
 
+def select(id):
+    supplier = None
+    sql = "SELECT * FROM suppliers WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        supplier = Supplier(result['name'], result['id'])
+    return supplier
+
+
+def suppliers_for_product(product):
+    suppliers = []
+
+    sql = "SELECT suppliers.* FROM locations INNER JOIN suppliers_products ON suppliers_products.suplier_id = suppliers.id WHERE product_id = %s"
+    values = [product.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        supplier = Supplier(row['name'], row['id'])
+        suppliers.append(supplier)
+
+    return suppliers
+    
 
 def delete_all():
     sql = "DELETE FROM suppliers"

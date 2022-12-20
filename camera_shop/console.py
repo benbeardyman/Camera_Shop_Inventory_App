@@ -7,7 +7,7 @@ import repositories.product_repository as product_repository
 import repositories.supplier_repository as supplier_repository
 import repositories.supplier_product_repository as supplier_product_repository
 
-# supplier_product_repository.delete_all()
+supplier_product_repository.delete_all()
 product_repository.delete_all()
 supplier_repository.delete_all()
 
@@ -21,5 +21,9 @@ supplier1 = Supplier('Swains')
 supplier_repository.save(supplier1)
 
 
-# supplier_product1 = Supplier_Product (supplier1, product1, 250.00)
-# supplier_product_repository.save(supplier_product1)
+supplier_product1 = Supplier_Product (supplier1, product1, 250.00)
+supplier_product_repository.save(supplier_product1)
+
+
+
+# pdb.set_trace()
