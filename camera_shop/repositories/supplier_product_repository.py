@@ -13,3 +13,8 @@ def save(supplier_product):
     results = run_sql(sql, values)
     supplier_product.id = results[0]['id']
     return supplier_product
+
+
+def delete_all():
+    sql = "DELETE FROM supplier_product"
+    run_sql(sql)

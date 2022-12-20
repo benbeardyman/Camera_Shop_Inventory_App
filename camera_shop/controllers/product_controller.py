@@ -4,3 +4,8 @@ import repositories.product_repository as product_repository
 import repositories.supplier_repository as supplier_repository
 
 products_blueprint = Blueprint("products", __name__)
+
+@products_blueprint.route("/products")
+def products():
+    products = product_repository.select_all()
+    return render_template("products/index.html", products=products)
