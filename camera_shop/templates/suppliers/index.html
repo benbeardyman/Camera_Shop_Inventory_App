@@ -1,4 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+<h1>Suppliers</h1>
+
+{% for supplier in suppliers %}
+
+<div>
+    <div>
+        Supplier: {{supplier.name}}
+    </div>
+
+</div>
+{% endfor %}
 
 {% endblock %}
