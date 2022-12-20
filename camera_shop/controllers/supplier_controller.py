@@ -29,3 +29,15 @@ def create_supplier():
     supplier = Supplier(name)
     supplier_repository.save(supplier)
     return redirect('/suppliers')
+
+@suppliers_blueprint.route("/suppliers/<id>/edit_supplier")
+def edit_supplier(id):
+    supplier = supplier_repository.select(id)
+    return render_template("suppliers/edit_supplier.html", supplier=supplier)
+
+@suppliers_blueprint.route("/suppliers/<id>", methods=['POST'])
+def update_supplier(id):
+    name = request.form['name']
+    supplier = Supplier(name, id)
+    supplier_repository.update(supplier)
+    return redirect('/suppliers')

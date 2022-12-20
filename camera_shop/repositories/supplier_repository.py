@@ -43,9 +43,12 @@ def suppliers_for_product(product):
     for row in results:
         supplier = Supplier(row['name'], row['id'])
         suppliers.append(supplier)
-
     return suppliers
     
+def update(supplier):
+    sql = "UPDATE suppliers SET name = %s WHERE id = %s"
+    values = [supplier.name, supplier.id]
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM suppliers"

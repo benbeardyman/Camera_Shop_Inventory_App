@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Products</h1>
+<h1>All Products</h1>
 
 <a href="/products/new_product">Add new product</a>
 
@@ -8,17 +8,12 @@
 
 <div>
     <div>
-        Product: <a href="/products/{{ product.id }}"> {{product.name}} </a> Manufacturer: {{product.manufacturer}}
-        <br>
-        Category: {{product.category}}
-        <br>
-        Description: {{product.description}}
-        <br>
-        Retail Price: {{product.retail_price}}
-        <br>
-        Stock Level: {{product.stock_level}}
-
-
+        <p>Product: <a href="/products/{{ product.id }}"> {{product.name}} </a></p>
+        <p>Manufacturer: {{product.manufacturer}}</p>
+        <p>Category: {{product.category}}</p>
+        <p>Description: {{product.description}}</p>
+        <p>Retail Price: {{product.retail_price}}</p>
+        <hr>
     </div>
 
 </div>

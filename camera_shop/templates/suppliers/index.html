@@ -2,13 +2,14 @@
 {% block content %}
 <h1>Suppliers</h1>
 
-<a href="/suppliers/new_supplier">Add new supplier</a>
+<p><a href="/suppliers/new_supplier">Add new supplier</a></p>
 
 {% for supplier in suppliers %}
 
 <div>
     <div>
-        Supplier: <a href="/suppliers/{{ supplier.id }}">{{supplier.name}}</a>
+        <p>Supplier: <a href="/suppliers/{{ supplier.id }}">{{supplier.name}}</a></p>
+        <hr>
     </div>
 
 </div>

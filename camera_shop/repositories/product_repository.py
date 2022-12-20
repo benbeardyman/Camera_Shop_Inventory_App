@@ -45,12 +45,12 @@ def products_for_supplier(supplier):
     for row in results:
         product = Product(row['name'], row['manufacturer'], row['category'], row['description'], row['retail_price'], row['stock_level'], row['id'])
         products.append(product)
-
     return products
 
-
-
-
+def update(product):
+    sql = "UPDATE products SET (name, manufacturer, category, description, retail_price, stock_level) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [product.name, product.manufacturer, product.category, product.description, product.retail_price, product.stock_level, product.id]
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM products"
