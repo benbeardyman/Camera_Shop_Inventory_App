@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Suppliers</h1>
+<h1>{{supplier.name}}</h1>
 
 {% for supplier in suppliers %}
 
 <div>
     <div>
-        Supplier: <a href="/suppliers/{{ supplier.id }}">{{supplier.name}}</a>
+        Products: 
     </div>
 
 </div>

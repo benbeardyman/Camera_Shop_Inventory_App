@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Products</h1>
+<h1>{{product.name}}</h1>
 
 {% for product in products %}
 
 <div>
     <div>
-        Product: <a href="/products/{{ product.id }}"> {{product.name}} </a> Manufacturer: {{product.manufacturer}}
+        Manufacturer: {{product.manufacturer}}
         <br>
         Category: {{product.category}}
         <br>
@@ -15,7 +15,19 @@
         Retail Price: {{product.retail_price}}
         <br>
         Stock Level: {{product.stock_level}}
+    </div>
 
+    <div>
+        <h3> Suppliers:</h3>
+        
+        <ul>
+            {% for supplier in suppliers %}
+            <li>{{ supplier.name }}</li>
+            <li>{{ supplier.cost_price}} </li>
+            {% endfor %}
+
+        </ul>
+        
 
     </div>
 

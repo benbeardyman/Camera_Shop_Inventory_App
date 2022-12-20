@@ -4,6 +4,7 @@ from models.product import Product
 from models.supplier import Supplier
 
 
+
 def save(product):
     sql = "INSERT INTO products(name,  category, description, manufacturer, retail_price, stock_level) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"
     values = [product.name, product.manufacturer, product.category, product.description, product.retail_price, product.stock_level]
@@ -29,7 +30,7 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
 
-    if results is not None:
+    if result is not None:
         product = Product(result['name'], result['manufacturer'], result['category'], result['description'], result['retail_price'], result['stock_level'], result['id'])
     return product
 
