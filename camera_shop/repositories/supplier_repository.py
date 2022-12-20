@@ -5,7 +5,7 @@ from models.supplier import Supplier
 
 
 def save(supplier):
-    sql = "INSERT INTO suppliers(name) VALUES ( %s ) RETURNING id"
+    sql = "INSERT INTO suppliers (name) VALUES ( %s ) RETURNING *"
     values = [supplier.name]
     results = run_sql(sql, values)
     supplier.id = results[0]['id']
@@ -18,7 +18,7 @@ def select_all():
     sql = "SELECT * FROM suppliers"
     results = run_sql(sql)
     for row in results:
-        supplier = Supplier(row['name'], ['id'])
+        supplier = Supplier(row['name'], row['id'])
         suppliers.append(supplier)
     return suppliers
 
@@ -36,7 +36,7 @@ def select(id):
 def suppliers_for_product(product):
     suppliers = []
 
-    sql = "SELECT suppliers.* FROM locations INNER JOIN suppliers_products ON suppliers_products.suplier_id = suppliers.id WHERE product_id = %s"
+    sql = "SELECT suppliers.* FROM suppliers INNER JOIN suppliers_products ON suppliers_products.supplier_id = suppliers.id WHERE product_id = %s"
     values = [product.id]
     results = run_sql(sql, values)
 

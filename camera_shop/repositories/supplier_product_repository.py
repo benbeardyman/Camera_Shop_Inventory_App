@@ -8,7 +8,7 @@ import repositories.supplier_repository as supplier_repository
 
 
 def save(supplier_product):
-    sql = "INSERT INTO suppliers_products (supplier_id, product_id, cost_price) VALUES ( %s, %s, %s ) RETURNING id"
+    sql = "INSERT INTO suppliers_products (supplier_id, product_id, cost_price) VALUES ( %s, %s, %s ) RETURNING *"
     values = [supplier_product.supplier.id, supplier_product.product.id, supplier_product.cost_price]
     results = run_sql(sql, values)
     supplier_product.id = results[0]['id']

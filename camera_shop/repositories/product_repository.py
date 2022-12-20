@@ -6,7 +6,7 @@ from models.supplier import Supplier
 
 
 def save(product):
-    sql = "INSERT INTO products(name,  category, description, manufacturer, retail_price, stock_level) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING id"
+    sql = "INSERT INTO products (name, manufacturer, category, description, retail_price, stock_level) VALUES ( %s, %s, %s, %s, %s, %s ) RETURNING *"
     values = [product.name, product.manufacturer, product.category, product.description, product.retail_price, product.stock_level]
     results = run_sql(sql, values)
     product.id = results[0]['id']
@@ -19,7 +19,7 @@ def select_all():
     sql = "SELECT * FROM products"
     results = run_sql(sql)
     for row in results:
-        product = Product(row['name'],  row['manufacturer'], row['category'], row['description'], row['retail_price'], row['stock_level'], ['id'])
+        product = Product(row['name'],  row['manufacturer'], row['category'], row['description'], row['retail_price'], row['stock_level'], row['id'])
         products.append(product)
     return products
 

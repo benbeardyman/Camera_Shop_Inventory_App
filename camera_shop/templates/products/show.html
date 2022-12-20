@@ -2,7 +2,6 @@
 {% block content %}
 <h1>{{product.name}}</h1>
 
-{% for product in products %}
 
 <div>
     <div>
@@ -22,8 +21,8 @@
         
         <ul>
             {% for supplier in suppliers %}
-            <li>{{ supplier.name }}</li>
-            <li>{{ supplier.cost_price}} </li>
+            <li>{{ supplier.name }} 
+                <br>Cost Price: {{ supplier.cost_price}}</li>
             {% endfor %}
 
         </ul>
@@ -32,6 +31,6 @@
     </div>
 
 </div>
-{% endfor %}
+
 
 {% endblock %}
