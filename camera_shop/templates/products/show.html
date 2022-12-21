@@ -27,10 +27,6 @@
             {% for supplier in suppliers %} 
             <li>
                 <a href="/suppliers/{{ supplier.id }}">{{ supplier.name }}</a> 
-                <br>
-                {% for supplier_product in suppliers_products %}
-                Cost Price: {{ supplier_product.cost_price}}
-                {% endfor %}
             </li>
             {% endfor %}
 

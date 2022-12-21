@@ -1,8 +1,14 @@
 DROP TABLE IF EXISTS suppliers_products;
 DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS manufacturers;
 DROP TABLE IF EXISTS suppliers;
 
 CREATE TABLE suppliers (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR (255)
+);
+
+CREATE TABLE manufacturers (
     id SERIAL PRIMARY KEY,
     name VARCHAR (255)
 );
