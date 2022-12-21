@@ -23,9 +23,14 @@
         <h3> Suppliers:</h3>
         
         <ul>
-            {% for supplier in suppliers %}
-            <li>{{ supplier.name }} 
-                <br>Cost Price: {{ supplier.cost_price}}</li>
+            {% for supplier in suppliers %} 
+            <li>
+                <a href="/suppliers/{{ supplier.id }}">{{ supplier.name }}</a> 
+                <br>
+                {% for supplier_product in suppliers_products %}
+                Cost Price: {{ supplier_product.cost_price}}
+                {% endfor %}
+            </li>
             {% endfor %}
 
         </ul>

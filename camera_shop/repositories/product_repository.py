@@ -47,6 +47,13 @@ def products_for_supplier(supplier):
         products.append(product)
     return products
 
+def products_for_supplier_product(supplier_product):
+    sql = "SELECT * FROM product WHERE id =%s"
+    values = [supplier_product.product.id]
+    results= run_sql(sql, values)[0]
+    product = Product(results['name'], results['manufacturer'], results['category'], results['description'], results['retail_price'], results['stock_level'], results['id'])
+    return product
+
 def update(product):
     sql = "UPDATE products SET (name, manufacturer, category, description, retail_price, stock_level) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [product.name, product.manufacturer, product.category, product.description, product.retail_price, product.stock_level, product.id]

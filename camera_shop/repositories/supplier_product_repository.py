@@ -15,7 +15,6 @@ def save(supplier_product):
     supplier_product.id = results[0]['id']
     return supplier_product
 
-
 def delete_all():
     sql = "DELETE FROM suppliers_products"
     run_sql(sql)
@@ -24,3 +23,5 @@ def delete(id):
     sql = "DELETE FROM suppliers_products WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+

@@ -14,10 +14,14 @@
     
     <ul>
         {% for product in products %}
-        <li>{{product.manufacturer}} {{ product.name }} 
-            <br>Cost Price: {{ product.cost_price}}</li>
+        <li>
+            <a href="/products/{{ product.id }}">{{product.manufacturer}} {{product.name}} </a>
+            <br>
+            {% for supplier_product in suppliers_products %}
+            Cost Price: {{ supplier_product.cost_price}}
+            {% endfor %}
+        </li>
         {% endfor %}
-
     </ul>
     
 
