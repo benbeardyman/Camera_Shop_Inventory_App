@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Manufacturers</h1>
+
+<div>
+    <form action="/manufacturer/new_manufacturer">
+    <input type="submit" value="New Manufacturer"/>
+    </form>
+</div>
+
+{% for manufacturer in manufacturers %}
+
+<div>
+    <div>
+        <p><a href="/manufacturers/{{ manufacturer.id }}">{{manufacturer.name}}</a></p>
+        <hr>
+    </div>
+
+</div>
+{% endfor %}
+
+{% endblock %}
