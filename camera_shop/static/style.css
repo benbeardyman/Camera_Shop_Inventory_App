@@ -5,4 +5,24 @@ body{
     
 }
 
-.sidebar{}
+.sidebar{
+    padding: 15px;
+    background-color: rgb(146, 220, 215);
+    height: 100vh;
+    grid-area: menu;
+}
+
+.main_area{
+    padding:15px;
+    height: 100vh;
+    grid-area: main;
+}
+
+
+#grid-container {
+    display: grid;
+    grid-template-areas:
+        'menu main';
+    grid-template-columns: 1.5fr 8fr;
+    
+    }

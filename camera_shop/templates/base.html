@@ -8,22 +8,25 @@
     <title>Camera Shop Stock Inventory</title>
 </head>
 <body>
-    <header>
+    <div id="grid-container">
+        <header>
 
-    </header>
+        
 
-    <div class="sidebar">
-        <nav>
-            <ul class="menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/products">Products</a></li>
-                <li><a href="/manufacturers">Manufacturers</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div>
-        {% block content %}
-        {% endblock %}
+        <div class="sidebar">
+            <nav>
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/manufacturers">Manufacturers</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+        <div class="main_area">
+            {% block content %}
+            {% endblock %}
+        </div>
     </div>
 </body>
 </html>
