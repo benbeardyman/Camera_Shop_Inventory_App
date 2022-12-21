@@ -4,6 +4,7 @@ from models.product import Product
 import repositories.product_repository as product_repository
 import repositories.supplier_repository as supplier_repository
 import repositories.supplier_product_repository as supplier_product_repository
+import repositories.manufacturer_repository as manufacturer_repository
 
 
 products_blueprint = Blueprint("products", __name__)

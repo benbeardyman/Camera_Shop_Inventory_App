@@ -15,18 +15,18 @@ product_repository.delete_all()
 supplier_repository.delete_all()
 
 
+manufacturer_1 = Manufacturer('Canon')
+manufacturer_repository.save(manufacturer_1)
 
-product1 = Product('EOS 4000D', 'Canon', 'DSLR Camera', 'Canon EOS 4000D DSLR Camera and EF-S 18-55 mm f/3.5-5.6 III Lens - Black', 399.99, 3)
-product_repository.save(product1)
+manufacturer_2 = Manufacturer('Nikon')
+manufacturer_repository.save(manufacturer_2)
 
-product2 = Product('D7500', 'Nikon', 'DSLR Camera', 'Nikon D7500 Camera Body with 18-140 mm VR Digital DSLR Kit - Black', 999.99, 2)
-product_repository.save(product2)
 
-manufacturer1 = Manufacturer('Canon')
-manufacturer_repository.save(manufacturer1)
+product_1 = Product('EOS 4000D', manufacturer_1, 'DSLR Camera', 'Canon EOS 4000D DSLR Camera and EF-S 18-55 mm f/3.5-5.6 III Lens - Black', 399.99, 3)
+product_repository.save(product_1)
 
-manufacturer2 = Manufacturer('Nikon')
-manufacturer_repository.save(manufacturer2)
+product_2 = Product('D7500', manufacturer_2, 'DSLR Camera', 'Nikon D7500 Camera Body with 18-140 mm VR Digital DSLR Kit - Black', 999.99, 2)
+product_repository.save(product_2)
 
 
 # supplier1 = Supplier('Swains')
