@@ -14,3 +14,14 @@ def manufacturers():
 def show(id):
     manufacturer = manufacturer_repository.select(id)
     return render_template("manufacturers/show.html", manufacturer=manufacturer)
+
+@manufacturers_blueprint.route("/manufacturers/new_manufacturer")
+def new_manufacturer():
+    return render_template("manufacturers/new_manufacturer.html")
+
+@manufacturers_blueprint.route("/manufacturers", methods=['POST'])
+def create_manufacturer():
+    name = request.form['name']
+    manufacturer = Manufacturer(name)
+    manufacturer_repository.save(manufacturer)
+    return redirect('/manufacturers')
