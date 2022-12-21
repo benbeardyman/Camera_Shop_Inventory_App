@@ -28,22 +28,4 @@ product_repository.save(product_1)
 product_2 = Product('D7500', manufacturer_2, 'DSLR Camera', 'Nikon D7500 Camera Body with 18-140 mm VR Digital DSLR Kit - Black', 999.99, 2)
 product_repository.save(product_2)
 
-
-# supplier1 = Supplier('Swains')
-# supplier_repository.save(supplier1)
-
-# supplier2 = Supplier('JSP')
-# supplier_repository.save(supplier2)
-
-
-# supplier_product1 = Supplier_Product (supplier1, product1, 250.00)
-# supplier_product_repository.save(supplier_product1)
-
-# supplier_product2 = Supplier_Product (supplier2, product1, 264.99)
-# supplier_product_repository.save(supplier_product2)
-
-# supplier_product3 = Supplier_Product (supplier1, product2, 760.00)
-# supplier_product_repository.save(supplier_product3)
-
-
 # pdb.set_trace()

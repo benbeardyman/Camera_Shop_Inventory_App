@@ -37,24 +37,6 @@ def select(id):
     return product
 
 
-def products_for_supplier(supplier):
-    products = []
-
-    sql = "SELECT products.* FROM products INNER JOIN suppliers_products ON suppliers_products.product_id = products.id WHERE supplier_id = %s"
-    values = [supplier.id]
-    results = run_sql(sql, values)
-
-    for row in results:
-        product = Product(row['name'], row['manufacturer'], row['category'], row['description'], row['retail_price'], row['stock_level'], row['id'])
-        products.append(product)
-    return products
-
-def products_for_supplier_product(supplier_product):
-    sql = "SELECT * FROM product WHERE id =%s"
-    values = [supplier_product.product.id]
-    results= run_sql(sql, values)[0]
-    product = Product(results['name'], results['manufacturer'], results['category'], results['description'], results['retail_price'], results['stock_level'], results['id'])
-    return product
 
 def update(product):
     sql = "UPDATE products SET (name, manufacturer, category, description, retail_price, stock_level) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
