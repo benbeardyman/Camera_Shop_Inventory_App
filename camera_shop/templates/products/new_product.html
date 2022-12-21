@@ -10,9 +10,9 @@
     </div>
     <div>
         <label for="manufacturer">Manufacturer:</label>
-        <select id="manufacturer" name="manufacturer">
+        <select id="manufacturer" name="manufacturer_id">
             {% for manufacturer in manufacturers %}
-            <option value="{{ manufacturer_id }}">{{ manufacturer.name }}</option>
+            <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
             {% endfor %}
         </select>
     </div>

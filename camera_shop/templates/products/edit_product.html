@@ -12,7 +12,7 @@
         <label for="manufacturer">Manufacturer:</label>
         <select id="manufacturer" name="manufacturer_id">
         {% for manufacturer in manufacturers %}
-        <option value="{{product.manufacturer}}"
+        <option value="{{manufacturer.id}}"
             {% if product.manufacturer.id == manufacturer.id %} selected="selected" {% endif %}
         >{{ manufacturer.name }}</option>
         {% endfor %}
