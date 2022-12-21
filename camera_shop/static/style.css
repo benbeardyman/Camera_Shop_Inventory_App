@@ -6,23 +6,35 @@ body{
 }
 
 .sidebar{
-    padding: 15px;
+    padding-top: 20px;
     background-color: rgb(146, 220, 215);
     height: 100vh;
     grid-area: menu;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+
+.menu li{
+    list-style: none;
 }
 
 .main_area{
     padding:15px;
     height: 100vh;
     grid-area: main;
+    overflow: auto;
 }
 
 
 #grid-container {
     display: grid;
     grid-template-areas:
-        'menu main';
-    grid-template-columns: 1.5fr 8fr;
     
+        'menu main';
+    grid-template-columns: 1.3fr 8fr;
+    min-height: 100%;
     }

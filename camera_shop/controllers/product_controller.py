@@ -13,6 +13,11 @@ def products():
     products = product_repository.select_all()
     return render_template("products/index.html", products=products)
 
+@products_blueprint.route("/products/inventory")
+def inventory():
+    products = product_repository.select_all()
+    return render_template("products/inventory.html", products=products)
+
 @products_blueprint.route("/products/<id>")
 def show(id):
     product = product_repository.select(id)

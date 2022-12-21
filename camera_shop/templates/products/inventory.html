@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Inventory</h1>
+
+
+{% for product in products %}
+{% if product.stock_level >0 %}
+<div>
+    <div>
+        <p>Product: <a href="/products/{{ product.id }}"> {{product.name}} </a></p>
+        <p>Manufacturer: {{product.manufacturer.name}}</p>
+        <p>Category: {{product.category}}</p>
+        <p>Retail Price: {{product.retail_price}}</p>
+        <p>Stock Level: {{product.stock_level}}</p>
+        
+        {% if product.stock_level == 0 %}
+        <p> OUT OF STOCK</p>
+        {% elif product.stock_level <= 2 %} 
+        <p> LOW STOCK </p>
+        {% endif %}
+        <hr>
+    </div>
+
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}
