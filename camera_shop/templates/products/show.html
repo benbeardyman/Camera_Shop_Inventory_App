@@ -5,7 +5,7 @@
 
 <div>
     <div>
-        <p>Manufacturer: {{product.manufacturer}}</p>
+        <p>Manufacturer: {{product.manufacturer.name}}</p>
         <p>Category: {{product.category}}</p>
         <p>Description: {{product.description}}</p>
         <p>Retail Price: {{product.retail_price}}</p>
@@ -20,20 +20,6 @@
         
     </div>
 
-    <!-- <div>
-        <h3> Suppliers:</h3>
-        
-        <ul>
-            {% for supplier in suppliers %} 
-            <li>
-                <a href="/suppliers/{{ supplier.id }}">{{ supplier.name }}</a> 
-            </li>
-            {% endfor %}
-
-        </ul>
-        
-
-    </div> -->
 
 </div>
 

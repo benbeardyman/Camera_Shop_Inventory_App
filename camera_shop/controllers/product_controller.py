@@ -1,9 +1,8 @@
 from flask import Flask, Blueprint, render_template, request, redirect
 from models.product import Product
+from models.manufacturer import Manufacturer
 
 import repositories.product_repository as product_repository
-import repositories.supplier_repository as supplier_repository
-import repositories.supplier_product_repository as supplier_product_repository
 import repositories.manufacturer_repository as manufacturer_repository
 
 
@@ -14,13 +13,10 @@ def products():
     products = product_repository.select_all()
     return render_template("products/index.html", products=products)
 
-
 @products_blueprint.route("/products/<id>")
 def show(id):
     product = product_repository.select(id)
-    suppliers = supplier_repository.suppliers_for_product(product)
-    return render_template("products/show.html", product=product, suppliers=suppliers)
-
+    return render_template("products/show.html", product=product)
 
 @products_blueprint.route("/products/new_product")
 def new_product():

@@ -12,9 +12,10 @@
 <div>
     <div>
         <p>Product: <a href="/products/{{ product.id }}"> {{product.name}} </a></p>
-        <p>Manufacturer: {{product.manufacturer}}</p>
+        <p>Manufacturer: {{product.manufacturer.name}}</p>
         <p>Category: {{product.category}}</p>
         <p>Description: {{product.description}}</p>
+        <p>Cost Price: {{product.cost_price}}</p>
         <p>Retail Price: {{product.retail_price}}</p>
         <p>Stock Level: {{product.stock_level}}</p>
         
