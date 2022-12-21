@@ -11,7 +11,7 @@ CREATE TABLE products (
     name VARCHAR (255),
     category VARCHAR (255),
     description VARCHAR (255),
-    manufacturer_id VARCHAR (255),
+    manufacturer_id INT NOT NULL REFERENCES manufacturers(id) ON DELETE CASCADE,
     cost_price FLOAT,
     retail_price FLOAT,
     stock_level INT
