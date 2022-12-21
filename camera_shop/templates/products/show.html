@@ -10,10 +10,11 @@
         <p>Description: {{product.description}}</p>
         <p>Retail Price: {{product.retail_price}}</p>
         <p>Stock Level: {{product.stock_level}}</p>
-        <p><a href="/products/{{product.id}}/edit_product">Edit</a></p>
-        <p>
+        <p><form action="/products/{{product.id}}/edit_product">
+            <input type="submit" value="Edit"/>
+            </form>
             <form action="/products/{{ product.id }}/delete" method="POST">
-                <input type="submit" value="delete"/>
+            <input type="submit" value="Delete"/>
             </form>
         </p>
         

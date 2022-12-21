@@ -2,7 +2,11 @@
 {% block content %}
 <h1>Suppliers</h1>
 
-<p><a href="/suppliers/new_supplier">Add new supplier</a></p>
+<div>
+    <form action="/suppliers/new_supplier">
+    <input type="submit" value="New Supplier"/>
+    </form>
+</div>
 
 {% for supplier in suppliers %}
 

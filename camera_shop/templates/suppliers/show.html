@@ -2,12 +2,12 @@
 {% block content %}
 <h1>{{supplier.name}}</h1>
 <div>
-<p><a href="/suppliers/{{supplier.id}}/edit_supplier">Edit Supplier</a></p>
-<p>
-    <form action="/suppliers/{{ supplier.id }}/delete" method="POST">
-        <input type="submit" value="delete"/>
+    <form action="/suppliers/{{supplier.id}}/edit_supplier">
+    <input type="submit" value="Edit"/>
     </form>
-</p>
+    <form action="/suppliers/{{ supplier.id }}/delete" method="POST">
+    <input type="submit" value="delete"/>
+    </form>
 </div>
 <div>
     <h3> Products:</h3>
