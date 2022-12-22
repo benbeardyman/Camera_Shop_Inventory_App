@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>{{manufacturer.name}}</h1>
+
 <div>
     <form action="/manufacturers/{{manufacturer.id}}/edit_manufacturer">
-    <input type="submit" value="Edit"/>
+    <input class="button" type="submit" value="Edit"/>
     </form>
     <form action="/manufacturers/{{ manufacturer.id }}/delete" method="POST">
-    <input type="submit" value="Delete"/>
+    <input class="button" type="submit" value="Delete"/>
     </form>
 </div>
 <div>
-    <h3> Products:</h3>
+    <!-- <h3> Products:</h3>
     
     <ul>
         {% for product in products %}
@@ -19,7 +20,7 @@
             <br>
         </li>
         {% endfor %}
-    </ul>
+    </ul> -->
     
 
 </div>

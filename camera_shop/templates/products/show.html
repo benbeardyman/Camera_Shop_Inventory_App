@@ -4,17 +4,28 @@
 
 
 <div>
-    <div>
+    <div class="details">
         <p>Manufacturer: {{product.manufacturer.name}}</p>
         <p>Category: {{product.category}}</p>
         <p>Description: {{product.description}}</p>
+        <p>Cost Price: {{product.cost_price}}</p>
         <p>Retail Price: {{product.retail_price}}</p>
         <p>Stock Level: {{product.stock_level}}</p>
+
+        {% if product.stock_level == 0 %}
+        <div class="no_stock">
+        <p> OUT OF STOCK</p>
+        </div>
+        {% elif product.stock_level <= 2 %} 
+        <div class="low_stock">
+        <p> LOW STOCK </p>
+        </div>
+        {% endif %}
         <p><form action="/products/{{product.id}}/edit_product">
-            <input type="submit" value="Edit"/>
+            <input class="button" type="submit" value="Edit"/>
             </form>
             <form action="/products/{{ product.id }}/delete" method="POST">
-            <input type="submit" value="Delete"/>
+            <input class="button" type="submit" value="Delete"/>
             </form>
         </p>
         

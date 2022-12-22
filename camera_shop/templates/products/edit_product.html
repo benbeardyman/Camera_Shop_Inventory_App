@@ -2,7 +2,7 @@
 {% block content %}
 <h1>Edit Product</h1>
 
-<form action="/products/{{product.id}}" method="post">
+<form class="container" action="/products/{{product.id}}" method="post">
     
     <div>
         <label for="name">Product Name:</label>
@@ -40,7 +40,7 @@
         <input type="number" id="stock_level" name="stock_level" min="0" value="{{product.stock_level}}" required>
     </div>
 
-    <button type="submit">Update Product</button>
+    <button class="button" type="submit">Update Product</button>
 
 
 </form>

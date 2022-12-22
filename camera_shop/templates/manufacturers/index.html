@@ -4,13 +4,13 @@
 
 <div>
     <form action="/manufacturers/new_manufacturer">
-    <input type="submit" value="New Manufacturer"/>
+    <input class="button" type="submit" value="New Manufacturer"/>
     </form>
 </div>
 
 {% for manufacturer in manufacturers %}
 
-<div>
+<div class="details">
     <div>
         <p><a href="/manufacturers/{{ manufacturer.id }}">{{manufacturer.name}}</a></p>
         <hr>

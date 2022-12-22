@@ -2,6 +2,7 @@ from flask import Flask, Blueprint, render_template, request, redirect
 from models.manufacturer import Manufacturer
 
 import repositories.manufacturer_repository as manufacturer_repository
+import repositories.product_repository as product_repository
 
 manufacturers_blueprint = Blueprint("manufacturers", __name__)
 
@@ -14,6 +15,12 @@ def manufacturers():
 def show(id):
     manufacturer = manufacturer_repository.select(id)
     return render_template("manufacturers/show.html", manufacturer=manufacturer)
+
+# @manufacturers_blueprint.route("/manufacturers/<id>")
+# def show(id):
+#     manufacturer = manufacturer_repository.select(id)
+#     products = product_repository.products_for_manufacturer(manufacturer)
+#     return render_template("manufacturers/show.html", manufacturer=manufacturer, products=products)
 
 @manufacturers_blueprint.route("/manufacturers/new_manufacturer")
 def new_manufacturer():

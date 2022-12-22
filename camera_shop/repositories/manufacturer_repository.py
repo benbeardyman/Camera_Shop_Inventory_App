@@ -43,3 +43,5 @@ def delete(id):
     sql = "DELETE FROM manufacturers WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+    

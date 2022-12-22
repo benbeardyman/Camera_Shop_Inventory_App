@@ -4,13 +4,13 @@
 
 <div>
 <form action="/products/new_product">
-    <input type="submit" value="New Product"/>
+    <input class="button" type="submit" value="New Product"/>
     </form>
 </div>
 {% for product in products %}
 
 <div>
-    <div>
+    <div class="details">
         <p>Product: <a href="/products/{{ product.id }}"> {{product.name}} </a></p>
         <p>Manufacturer: {{product.manufacturer.name}}</p>
         <p>Category: {{product.category}}</p>
@@ -20,9 +20,13 @@
         <p>Stock Level: {{product.stock_level}}</p>
         
         {% if product.stock_level == 0 %}
+        <div class="no_stock">
         <p> OUT OF STOCK</p>
+        </div>
         {% elif product.stock_level <= 2 %} 
+        <div class="low_stock">
         <p> LOW STOCK </p>
+        </div>
         {% endif %}
         <hr>
     </div>
