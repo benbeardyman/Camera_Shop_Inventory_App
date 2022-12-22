@@ -7,7 +7,7 @@
 {% if product.stock_level >0 %}
 <div>
     <div class="details">
-        <p>Product: <a href="/products/{{ product.id }}"> {{product.name}} </a></p>
+        <p class="title">Product: <a href="/products/{{ product.id }}"> {{product.name}} </a></p>
         <p>Manufacturer: {{product.manufacturer.name}}</p>
         <p>Category: {{product.category}}</p>
         <p>Retail Price: {{product.retail_price}}</p>

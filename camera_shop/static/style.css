@@ -113,12 +113,13 @@ select {
     color:black;
 }
 
-
+.title {
+    font-weight: bold;
+}
 
 #grid-container {
     display: grid;
     grid-template-areas:
-    
         'menu main';
     grid-template-columns: 1.3fr 8fr;
     min-height: 100%;
