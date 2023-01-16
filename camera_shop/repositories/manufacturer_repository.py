@@ -19,6 +19,13 @@ def select_all():
         manufacturers.append(manufacturer)
     return manufacturers
 
+# 1. Create manufacturer variable and define as None
+# 2. Create SQL variable and assign as SQL string with select all query selecting from manufacturers table where id in table is same as input id
+# 3. Create vaules variable and assign as a list containing input id
+# 4. Create result variable running the SQL query giving the first result to the variable
+# 5. If query gives a result (result is not None) create instance of Manufacturer
+# 6. Return manufacturer variable
+
 def select(id):
     manufacturer = None
     sql = "SELECT * FROM manufacturers WHERE id = %s"
