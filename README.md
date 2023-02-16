@@ -1,5 +1,5 @@
 # Camera Shop Inventory App :camera_flash:
-Solo project from the first module of CodeClan Professional Software Development course. This is a full-stack Python app utilisng a Flask / HTML / CSS front-end and a PostgreSQL database in the back-end.
+Solo project from the first module of CodeClan Professional Software Development course, an app which allows the owner of a camera shop to track their inventory.
 
 ## The Brief :clipboard:
 Shop Inventory
@@ -20,6 +20,13 @@ Calculate the markup on items in the store, and display it in the inventory
 Filter the inventory list by manufacturer. For example, provide an option to view all books in stock by a certain author.
 Categorise your items. Books might be categorised by genre (crime, horror, romance...) and cars might be categorised by type (SUV, coupé, hatchback...). Provide an option to filter the inventory list by these categories.
 Mark manufacturers as active/deactivated. Deactivated manufacturers will not appear when creating new products.
+
+## Built With :building_construction:	
+* Python
+* Flask
+* Postgresql
+* HTML
+* CSS
 
 ## Loading the app :dizzy:		
 These instructions should get you a copy of the project up and running on your local machine for development purposes.
