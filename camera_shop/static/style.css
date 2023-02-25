@@ -1,50 +1,85 @@
 body{
-    font-family:'Tahoma', 'Gill Sans', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-family:'DIN Condensed', 'Tahoma', 'Gill Sans', 'Calibri', 'Trebuchet MS', sans-serif;
     margin: 0;
     padding: 0;
     
 }
 
+#grid-container {
+    display: grid;
+    grid-template-areas:
+        'menu main';
+    grid-template-columns: 1.2fr 8.5fr;
+    min-height: 100%;
+    }
+
+#home-image {
+    width:100vw;
+    background-image: url('images/maxresdefault.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+#logo {
+    width: 12rem;
+    padding: .5rem;
+    padding-bottom: 2rem;
+}
 
 .sidebar{
-    padding-top: 20px;
-    background-color: rgb(146, 220, 215);
-    height: 100vh;
     grid-area: menu;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    background-color: rgba(39, 39, 39, 1);
+    height: 100vh;
 }
 
-.menu li a{
+.nav {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.nav li a{
     text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
+    color: rgba(252, 252, 251, 1);
+    font-size: 1.5rem;
 }
 
-.menu li{
+.nav li{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
     list-style: none;
+    padding-top:.5rem;
+    width:10rem;
+    color: rgba(252, 252, 251, 1);
+    font-size: 1.5rem;
 }
 
 .main_area{
-    padding:15px;
+    padding-left:15px;
     height: 100vh;
     grid-area: main;
     overflow: auto;
 }
 
 .button {
-
     margin:5px;
     border: solid;
     border-radius: 6px;
-    border-color: #69afad;
-    font-size: 1.2em;
+    border-color: rgba(132, 202, 114, 1);
+    font-size: 1rem;
     padding: 8px 20px;;
-    color: white;
-    background-color: #69afad;
+    color:  rgba(252, 252, 251, 1);
+    background-color:  rgba(132, 202, 114, 1);
 }
 
 .button:hover {
-    background-color: white;
-    color: #69afad;
+    background-color:  rgba(252, 252, 251, 1);
+    color:  rgba(39, 39, 39, 1);
     cursor: pointer;
 }
 
@@ -54,24 +89,23 @@ body{
     align-items: flex-end;
     width: 500px;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: rgba(216, 217, 216, 1);
     padding: 20px;
 }
-
 
 label {
     padding: 12px 50px 12px 0;
     display: inline-block;
-  }
+}
 
 input {
     width: 300px;
     padding: 8px 15px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 2px solid rgba(216, 217, 216, 1);
     border-radius: 4px;
-    background-color: #f8f8f8;
+    background-color:  rgba(252, 252, 251, 1);
 }
 
 textarea {
@@ -79,18 +113,18 @@ textarea {
     height: 150px;
     padding: 8px 15px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 2px solid rgba(216, 217, 216, 1);
     border-radius: 4px;
-    background-color: #f8f8f8;
+    background-color:  rgba(252, 252, 251, 1);
     resize: none;
 }
 
 select {
     width: 300px;
     padding: 8px 15px;
-    border: 2px solid #ccc;
+    border: 2px solid rgba(216, 217, 216, 1);
     border-radius: 4px;
-    background-color: #f8f8f8;
+    background-color:  rgba(252, 252, 251, 1);
 }
 
 
@@ -106,28 +140,15 @@ select {
 
 .details a{
     text-decoration: none;
-    color:black;
+    color:rgba(39, 39, 39, 1);
 }
 
 .details a:visited{
-    color:black;
+    color:rgba(39, 39, 39, 1);
 }
 
 .title {
     font-weight: bold;
 }
 
-#grid-container {
-    display: grid;
-    grid-template-areas:
-        'menu main';
-    grid-template-columns: 1.3fr 8fr;
-    min-height: 100%;
-    }
 
-#home-image {
-    height:100vh;
-    background-image: url('images/maxresdefault.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    }
