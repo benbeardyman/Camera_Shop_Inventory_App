@@ -38,8 +38,8 @@ pip3 install Flask
 pip3 install psycopg2
 Create and seed the database:
 
-createdb camera_stock
-psql -d camera_stock -f camera_shop_stock.sql
+createdb camera_shop_stock
+psql -d camera_shop_stock -f camera_shop_stock.sql
 Run the app:
 
 flask run
