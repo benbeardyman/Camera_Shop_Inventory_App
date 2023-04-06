@@ -33,16 +33,20 @@ eBay, Amazon (back end only), Magento
 These instructions should get you a copy of the project up and running on your local machine for development purposes.
 
 Install flask and psycopg:
-
+```
 pip3 install Flask
 pip3 install psycopg2
+```
 Create and seed the database:
 
+```
 createdb camera_shop_stock
 psql -d camera_shop_stock -f camera_shop_stock.sql
+```
 Run the app:
-
+```
 flask run
+```
 The web applicaiton can then be viewed in the browser by navigating to http://localhost:4999.
 
 Note: The console.py file is available for testing and can be run in the terminal using:
