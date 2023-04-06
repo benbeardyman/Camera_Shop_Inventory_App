@@ -50,5 +50,6 @@ flask run
 The web applicaiton can then be viewed in the browser by navigating to http://localhost:4999.
 
 Note: The console.py file is available for testing and can be run in the terminal using:
-
+```
 python3 console.py
+```
